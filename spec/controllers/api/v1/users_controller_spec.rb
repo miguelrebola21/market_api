@@ -2,6 +2,16 @@ require 'spec_helper'
 
 describe Api::V1::UsersController do
   before(:each) { request.headers['Accept'] = "application/vnd.marketplace.v1" }
+  	
+  	describe "DELETE #destroy" do
+ 	before(:each) do
+    @user = FactoryGirl.create :user
+    delete :destroy, { id: @user.id }, format: :json
+  	end
+
+	  it { should respond_with 204 }
+
+	end 
 
   	describe "PUT/PATCH #update" do
 
@@ -40,7 +50,7 @@ describe Api::V1::UsersController do
       it { should respond_with 422 }
     end
   end
-  
+
    describe "POST #create" do
 
     context "when is successfully created" do
