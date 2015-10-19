@@ -47,4 +47,9 @@ group :development, :test do
 end
 gem "devise"
 gem "rb-readline"
+gem 'sabisu_rails', github: "IcaliaLabs/sabisu-rails"
+gem 'compass-rails'
+gem 'furatto'
+gem 'font-awesome-rails'
+gem 'simple_form'
 
